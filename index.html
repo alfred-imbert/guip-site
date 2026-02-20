@@ -256,36 +256,56 @@
       max-width: 520px; margin: 0 auto; line-height: 1.6;
     }
 
-    /* ========== SOLUTIONS GRID ========== */
+    /* ========== SOLUTIONS TABS (Droxy-style) ========== */
     .solutions { padding: 100px 0; background: #f9fafb; }
     .solutions-header { text-align: center; margin-bottom: 56px; }
-    .solutions-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+    .solutions-tabs-layout {
+      display: grid; grid-template-columns: 300px 1fr;
+      background: #fff; border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      overflow: hidden; min-height: 420px;
     }
-    .solution-card {
-      background: #fff; border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 12px; padding: 28px 24px;
-      transition: all 0.2s ease; cursor: default;
+    .solutions-tabs {
+      border-right: 1px solid rgba(0,0,0,0.06);
+      padding: 12px 0; display: flex; flex-direction: column;
     }
-    .solution-card:hover {
-      border-color: rgba(0,0,0,0.12);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
+    .tab-item {
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px; cursor: pointer;
+      font-size: 14px; color: #71717a;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
     }
-    .solution-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: #f4f4f5; margin-bottom: 16px;
-      display: flex; align-items: center; justify-content: center;
+    .tab-item:hover { color: #111113; background: rgba(0,0,0,0.02); }
+    .tab-item.active {
+      color: #111113; font-weight: 500;
+      border-left-color: #f97316;
+      background: rgba(249,115,22,0.04);
     }
-    .solution-icon svg { width: 20px; height: 20px; stroke: #52525b; fill: none; stroke-width: 1.5; }
-    .solution-problem {
-      font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 500;
-      color: #111113; margin-bottom: 10px; line-height: 1.3;
+    .tab-item svg {
+      width: 20px; height: 20px; flex-shrink: 0;
+      stroke: currentColor; fill: none; stroke-width: 1.5;
     }
-    .solution-answer { font-size: 14px; color: #71717a; line-height: 1.5; margin-bottom: 14px; }
-    .solution-price { font-size: 13px; color: #a1a1aa; }
-    .solution-proof { font-size: 12px; color: #f97316; margin-top: 8px; }
+    .solutions-content { padding: 56px; display: flex; align-items: center; }
+    .solutions-detail { display: none; width: 100%; }
+    .solutions-detail.active { display: block; }
+    .detail-title {
+      font-family: 'Satoshi', sans-serif; font-size: 28px; font-weight: 500;
+      color: #111113; margin-bottom: 16px; line-height: 1.2;
+    }
+    .detail-desc {
+      font-size: 15px; color: #71717a; line-height: 1.7;
+      max-width: 480px; margin-bottom: 28px;
+    }
+    .detail-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border: 1px solid rgba(0,0,0,0.12);
+      border-radius: 8px; font-size: 14px; font-weight: 500;
+      color: #111113; text-decoration: none; transition: all 0.15s ease;
+    }
+    .detail-cta:hover { background: #f4f4f5; }
+    .detail-cta svg { width: 14px; height: 14px; }
 
     /* ========== DIAGNOSTIC (PRICING 2-COL) ========== */
     .diagnostic { padding: 100px 0; background: #fff; }
@@ -563,7 +583,7 @@
     .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
     /* Card hovers */
-    .diag-card, .solution-card, .port-card { transition: all 0.25s ease; }
+    .diag-card, .port-card { transition: all 0.25s ease; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -577,7 +597,14 @@
       .hero .container { grid-template-columns: 1fr; }
       .headline { font-size: 34px; }
       .hero-mockup { display: none; }
-      .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+      .solutions-tabs-layout { grid-template-columns: 1fr; }
+      .solutions-tabs {
+        border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06);
+        flex-direction: row; overflow-x: auto; padding: 0; -webkit-overflow-scrolling: touch;
+      }
+      .tab-item { border-left: none; border-bottom: 3px solid transparent; white-space: nowrap; padding: 14px 20px; }
+      .tab-item.active { border-left-color: transparent; border-bottom-color: #f97316; }
+      .solutions-content { padding: 32px 24px; }
       .diagnostic-grid { grid-template-columns: 1fr; max-width: 420px; }
       .custom-card { flex-direction: column; text-align: center; padding: 32px 24px; }
       .custom-action { text-align: center; }
@@ -591,7 +618,8 @@
       .form-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
-      .solutions-grid { grid-template-columns: 1fr; }
+      .tab-item { padding: 12px 16px; font-size: 13px; }
+      .tab-item svg { width: 16px; height: 16px; }
     }
   </style>
 </head>
@@ -715,56 +743,65 @@
         <h2 class="section-title">Trouvez-vous dans la liste.<br>Je construis la solution.</h2>
         <p class="section-subtitle">Chaque carte = un problème concret que l'AI peut résoudre pour vous.</p>
       </div>
-      <div class="solutions-grid">
-
-        <div class="solution-card">
-          <div class="solution-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3 class="solution-problem">"Je réponds aux mêmes questions 20x/semaine"</h3>
-          <p class="solution-answer">Un assistant AI qui connaît votre business et répond à vos clients 24/7, dans votre ton.</p>
-          <p class="solution-price">3 000 - 6 000$</p>
-          <p class="solution-proof">Preuve : Honeybou - 200+ produits, support automatisé</p>
+      <div class="solutions-tabs-layout">
+        <div class="solutions-tabs">
+          <div class="tab-item active" data-tab="0">
+            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Support client AI
+          </div>
+          <div class="tab-item" data-tab="1">
+            <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+            Dashboard intelligent
+          </div>
+          <div class="tab-item" data-tab="2">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Automatisation
+          </div>
+          <div class="tab-item" data-tab="3">
+            <svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Création de contenu
+          </div>
+          <div class="tab-item" data-tab="4">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            Outil sur mesure
+          </div>
+          <div class="tab-item" data-tab="5">
+            <svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            Visuels et vidéo
+          </div>
         </div>
-
-        <div class="solution-card">
-          <div class="solution-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
-          <h3 class="solution-problem">"Je vois pas clair dans mes chiffres"</h3>
-          <p class="solution-answer">Un dashboard qui centralise vos données et vous envoie un rapport chaque matin.</p>
-          <p class="solution-price">5 000 - 12 000$</p>
-          <p class="solution-proof">Preuve : Alfred - briefing quotidien automatique</p>
+        <div class="solutions-content">
+          <div class="solutions-detail active" data-detail="0">
+            <h3 class="detail-title">Support client AI</h3>
+            <p class="detail-desc">Vous répondez aux mêmes questions 20 fois par semaine? Un assistant AI qui connaît votre business répond à vos clients 24/7, dans votre ton. Il apprend de vos réponses et s'améliore avec le temps.</p>
+            <a href="#contact" class="detail-cta">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="solutions-detail" data-detail="1">
+            <h3 class="detail-title">Dashboard intelligent</h3>
+            <p class="detail-desc">Vous ne voyez pas clair dans vos chiffres? Un dashboard qui centralise vos données et vous envoie un rapport chaque matin. Ventes, inventaire, performance - tout au même endroit.</p>
+            <a href="#contact" class="detail-cta">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="solutions-detail" data-detail="2">
+            <h3 class="detail-title">Automatisation</h3>
+            <p class="detail-desc">Vous faites les mêmes tâches chaque jour? Des workflows qui tournent tout seuls pendant que vous vous concentrez sur ce qui compte vraiment. Emails, rapports, suivi - tout roule en arrière-plan.</p>
+            <a href="#contact" class="detail-cta">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="solutions-detail" data-detail="3">
+            <h3 class="detail-title">Création de contenu</h3>
+            <p class="detail-desc">Vous passez des heures à créer du contenu? Photo de produit, description en 10 secondes. Posts sociaux générés dans votre voix. Le contenu ne devrait jamais être un goulot d'étranglement.</p>
+            <a href="#contact" class="detail-cta">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="solutions-detail" data-detail="4">
+            <h3 class="detail-title">Outil sur mesure</h3>
+            <p class="detail-desc">Vous avez besoin d'un outil qui n'existe pas? Un outil taillé pour votre réalité, construit en 2-4 semaines. Pas un template générique - une solution qui s'adapte à vos processus.</p>
+            <a href="#contact" class="detail-cta">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="solutions-detail" data-detail="5">
+            <h3 class="detail-title">Visuels et vidéo</h3>
+            <p class="detail-desc">Vous voulez des visuels sans payer un studio? Images et vidéos par AI, guidées par 25 ans de direction artistique. Pas juste "un gars avec Midjourney" - un directeur artistique qui utilise l'AI.</p>
+            <a href="#contact" class="detail-cta">En savoir plus <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
         </div>
-
-        <div class="solution-card">
-          <div class="solution-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-          <h3 class="solution-problem">"Je fais les mêmes tâches chaque jour"</h3>
-          <p class="solution-answer">Des workflows qui tournent tout seuls pendant que vous vous concentrez sur l'essentiel.</p>
-          <p class="solution-price">3 000 - 8 000$</p>
-          <p class="solution-proof">Preuve : Alfred - 20+ automatisations/jour</p>
-        </div>
-
-        <div class="solution-card">
-          <div class="solution-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
-          <h3 class="solution-problem">"Je passe des heures à créer du contenu"</h3>
-          <p class="solution-answer">Photo de produit? Description en 10 secondes. Posts sociaux générés dans votre voix.</p>
-          <p class="solution-price">2 000 - 6 000$</p>
-          <p class="solution-proof">Preuve : Honeybou + Stella - contenu on-brand automatisé</p>
-        </div>
-
-        <div class="solution-card">
-          <div class="solution-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-          <h3 class="solution-problem">"J'ai besoin d'un outil qui existe pas"</h3>
-          <p class="solution-answer">Un outil taillé pour votre réalité, construit en 2-4 semaines. Pas un template générique.</p>
-          <p class="solution-price">5 000 - 15 000$</p>
-          <p class="solution-proof">Preuve : Storyboard Maker - scénario en images</p>
-        </div>
-
-        <div class="solution-card">
-          <div class="solution-icon"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <h3 class="solution-problem">"Je veux des visuels sans payer un studio"</h3>
-          <p class="solution-answer">Images et vidéos par AI, guidées par 25 ans de direction artistique. Pas juste "un gars avec Midjourney".</p>
-          <p class="solution-price">2 000 - 8 000$</p>
-          <p class="solution-proof">25 ans d'expertise visuelle - Belairdirect, Intact, Casino de Montréal</p>
-        </div>
-
       </div>
     </div>
   </section>
@@ -1061,7 +1098,7 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.problem-content, .solutions-header, .solutions-grid, .diagnostic-header, .diagnostic-grid, .custom-card, .how-header, .steps-grid, .why-header, .why-grid, .portfolio-header, .portfolio-grid, .cta-box, .contact-grid').forEach(el => {
+    document.querySelectorAll('.problem-content, .solutions-header, .solutions-tabs-layout, .diagnostic-header, .diagnostic-grid, .custom-card, .how-header, .steps-grid, .why-header, .why-grid, .portfolio-header, .portfolio-grid, .cta-box, .contact-grid').forEach(el => {
       el.classList.add('animate-on-scroll');
       observer.observe(el);
     });
@@ -1071,6 +1108,16 @@
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.pageYOffset > 50);
     }, { passive: true });
+
+    // Solutions tabs
+    document.querySelectorAll('.tab-item').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.solutions-detail').forEach(d => d.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelector('[data-detail="' + tab.dataset.tab + '"]').classList.add('active');
+      });
+    });
   </script>
 
 </body>
