@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Primary -->
+  <title>Guillaume Perron — Consultant IA pour entrepreneurs au Québec</title>
+  <meta name="description" content="Je traduis vos problèmes business en solutions AI concrètes. Scan de votre business dès 88$. Assistants, dashboards, automatisations sur mesure pour PME au Québec.">
+  <meta name="author" content="Guillaume Perron">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guip.ca">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:site_name" content="Guillaume Perron — GuiP Inc.">
+  <meta property="og:title" content="Guillaume Perron — Consultant IA pour entrepreneurs">
+  <meta property="og:description" content="Je traduis vos problèmes business en solutions AI concrètes. Scan dès 88$. Solutions sur mesure pour PME au Québec.">
+  <meta property="og:image" content="https://guip.ca/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://guip.ca">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guillaume Perron — Consultant IA pour entrepreneurs">
+  <meta name="twitter:description" content="Solutions AI sur mesure pour PME au Québec. Scan de votre business dès 88$.">
+  <meta name="twitter:image" content="https://guip.ca/og-image.png">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Guillaume Perron — GuiP Inc.",
+    "description": "Consultant IA pour entrepreneurs et PME au Québec. Solutions AI sur mesure : assistants, dashboards, automatisations.",
+    "url": "https://guip.ca",
+    "email": "guillaume@guillaumeperron.ai",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Québec, Canada"
+    },
+    "priceRange": "$$",
+    "founder": {
+      "@type": "Person",
+      "name": "Guillaume Perron",
+      "jobTitle": "Consultant IA",
+      "knowsAbout": ["Intelligence artificielle", "Automatisation", "Solutions AI pour PME", "Design"]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services AI",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Scan Express",
+          "description": "Scan automatisé de votre business avec 3 quick wins AI identifiés en 24h",
+          "price": "88",
+          "priceCurrency": "CAD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Diagnostic Complet",
+          "description": "Diagnostic approfondi avec entrevue 60 min, plan d'implémentation détaillé et suivi",
+          "price": "888",
+          "priceCurrency": "CAD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Solutions AI sur mesure",
+          "description": "Assistants, dashboards, automatisations construits pour votre business",
+          "priceRange": "3000-15000 CAD"
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #fafafa;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #0a0a0b;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 48px; }
+
+    /* ========== HEADER ========== */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(250,250,250,0.8);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+    }
+    .header.scrolled { background: rgba(255,255,255,0.95); box-shadow: 0 1px 12px rgba(0,0,0,0.04); }
+    .header-inner {
+      max-width: 1140px; margin: 0 auto; padding: 0 48px;
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .header-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .header-logo {
+      width: 32px; height: 32px; border-radius: 8px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 600; font-size: 13px;
+    }
+    .header-name { font-family: 'Satoshi', sans-serif; font-size: 15px; font-weight: 500; color: #111113; }
+    .header-nav { display: flex; align-items: center; gap: 32px; }
+    .header-nav a { font-size: 14px; color: #52525b; text-decoration: none; transition: color 120ms; }
+    .header-nav a:hover { color: #111113; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .btn-signup {
+      padding: 8px 16px; font-size: 13px; font-weight: 500;
+      background: #111113; color: #fff; border: none; border-radius: 6px;
+      text-decoration: none; transition: all 120ms;
+    }
+    .btn-signup:hover { background: #0a0a0b; }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding-top: 56px;
+    }
+    .hero .container {
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 64px; align-items: center; padding: 80px 48px;
+    }
+    .hero-content { max-width: 540px; }
+    .headline {
+      font-family: 'Satoshi', sans-serif; font-size: 44px; font-weight: 500;
+      letter-spacing: -0.025em; line-height: 1.12; color: #111113; margin-bottom: 20px;
+    }
+    .subheadline { font-size: 16px; line-height: 1.7; color: #71717a; margin-bottom: 32px; }
+    .cta-group { display: flex; align-items: center; gap: 20px; margin-bottom: 56px; }
+    .btn-primary {
+      padding: 10px 18px; font-size: 14px; font-weight: 500;
+      background: #18181b; color: #fff; border: none; border-radius: 6px;
+      cursor: pointer; transition: all 120ms ease-out; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-primary:hover { background: #0a0a0b; transform: translateY(-1px); }
+    .btn-ghost {
+      padding: 10px 0; font-size: 14px; background: transparent; color: #71717a;
+      border: none; cursor: pointer; display: inline-flex; align-items: center;
+      gap: 6px; text-decoration: none; transition: color 120ms;
+    }
+    .btn-ghost:hover { color: #0a0a0b; }
+    .social-proof-label { font-size: 13px; color: #a1a1aa; margin-bottom: 14px; }
+    .clients { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+    .client { font-size: 13px; color: #71717a; }
+
+    /* Hero Chat Mockup */
+    .hero-mockup { position: relative; }
+    .chat-window {
+      width: 380px; background: #fff; border-radius: 16px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .chat-header {
+      padding: 16px 20px; background: #fafafa;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .chat-dots { display: flex; gap: 6px; }
+    .chat-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .chat-dot.red { background: #ff5f57; }
+    .chat-dot.yellow { background: #febc2e; }
+    .chat-dot.green { background: #28c840; }
+    .chat-title { flex: 1; display: flex; align-items: center; gap: 8px; }
+    .chat-icon {
+      width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 13px; font-weight: 600;
+    }
+    .chat-name { font-size: 14px; font-weight: 500; color: #111; }
+    .chat-status { font-size: 11px; color: #22c55e; display: flex; align-items: center; gap: 4px; }
+    .chat-status::before { content: ''; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; }
+    .chat-body { padding: 20px; min-height: 260px; display: flex; flex-direction: column; gap: 16px; }
+    .msg { display: flex; gap: 10px; }
+    .msg.user { flex-direction: row-reverse; }
+    .msg-avatar {
+      width: 32px; height: 32px; border-radius: 10px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 12px; font-weight: 600; flex-shrink: 0;
+    }
+    .msg.user .msg-avatar { background: #e4e4e7; color: #71717a; }
+    .msg-bubble {
+      max-width: 220px; padding: 12px 16px;
+      font-size: 13px; line-height: 1.5; border-radius: 16px;
+    }
+    .msg.ai .msg-bubble { background: #f4f4f5; color: #111; border-bottom-left-radius: 4px; }
+    .msg.user .msg-bubble { background: #111; color: #fff; border-bottom-right-radius: 4px; }
+    .msg-meta { font-size: 11px; color: #a1a1aa; margin-top: 6px; }
+    .chat-input {
+      padding: 16px 20px; background: #fafafa;
+      border-top: 1px solid rgba(0,0,0,0.06);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .chat-input input {
+      flex: 1; padding: 10px 14px;
+      border: 1px solid rgba(0,0,0,0.08); border-radius: 10px;
+      font-size: 13px; background: #fff; outline: none;
+    }
+    .chat-send {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: #f97316; border: none;
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+    }
+    .accent-glow {
+      position: absolute; top: 50%; right: -100px; transform: translateY(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* ========== PROBLEM SECTION ========== */
+    .problem { padding: 80px 0; background: #fff; }
+    .problem-content { max-width: 680px; margin: 0 auto; text-align: center; }
+    .problem-title {
+      font-family: 'Satoshi', sans-serif; font-size: 32px; font-weight: 500;
+      letter-spacing: -0.02em; line-height: 1.2; color: #111113; margin-bottom: 20px;
+    }
+    .problem-text { font-size: 16px; color: #71717a; line-height: 1.7; }
+    .problem-text strong { color: #111113; }
+
+    /* ========== SHARED SECTION STYLES ========== */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; color: #71717a;
+      padding: 6px 14px; background: rgba(0,0,0,0.03);
+      border-radius: 20px; margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Satoshi', sans-serif; font-size: 36px; font-weight: 500;
+      letter-spacing: -0.02em; line-height: 1.15; color: #111113; margin-bottom: 12px;
+    }
+    .section-subtitle {
+      font-size: 16px; color: #71717a;
+      max-width: 520px; margin: 0 auto; line-height: 1.6;
+    }
+
+    /* ========== SOLUTIONS GRID ========== */
+    .solutions { padding: 100px 0; background: #f9fafb; }
+    .solutions-header { text-align: center; margin-bottom: 56px; }
+    .solutions-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .solution-card {
+      background: #fff; border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px; padding: 28px 24px;
+      transition: all 0.2s ease; cursor: default;
+    }
+    .solution-card:hover {
+      border-color: rgba(0,0,0,0.12);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .solution-icon { font-size: 28px; margin-bottom: 16px; }
+    .solution-problem {
+      font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 500;
+      color: #111113; margin-bottom: 10px; line-height: 1.3;
+    }
+    .solution-answer { font-size: 14px; color: #71717a; line-height: 1.5; margin-bottom: 14px; }
+    .solution-price { font-size: 13px; color: #a1a1aa; }
+    .solution-proof { font-size: 12px; color: #f97316; margin-top: 8px; }
+
+    /* ========== DIAGNOSTIC (PRICING 2-COL) ========== */
+    .diagnostic { padding: 100px 0; background: #fff; }
+    .diagnostic-header { text-align: center; margin-bottom: 56px; }
+    .diagnostic-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px; max-width: 800px; margin: 0 auto;
+    }
+    .diag-card {
+      background: #fff; border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px; padding: 36px 32px;
+      transition: all 0.25s ease; position: relative;
+    }
+    .diag-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .diag-card.featured {
+      background: #111113; border-color: #111113;
+    }
+    .diag-card.featured * { color: #fff; }
+    .diag-card.featured .diag-desc { color: #a1a1aa; }
+    .diag-card.featured .diag-features li { color: #a1a1aa; }
+    .diag-card.featured .diag-features li svg { color: #22c55e; }
+    .diag-badge {
+      display: inline-block; font-size: 10px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em;
+      color: #f97316; padding: 4px 10px;
+      background: rgba(249,115,22,0.15); border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .diag-name {
+      font-family: 'Satoshi', sans-serif; font-size: 22px; font-weight: 500;
+      color: #111113; margin-bottom: 8px;
+    }
+    .diag-price {
+      display: flex; align-items: baseline; gap: 4px; margin-bottom: 16px;
+    }
+    .diag-price .amount {
+      font-family: 'Satoshi', sans-serif; font-size: 42px; font-weight: 500; color: #111113;
+    }
+    .diag-desc {
+      font-size: 14px; color: #71717a; line-height: 1.6;
+      margin-bottom: 24px; padding-bottom: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .diag-card.featured .diag-desc { border-color: rgba(255,255,255,0.1); }
+    .diag-features { list-style: none; margin-bottom: 28px; }
+    .diag-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: #52525b; line-height: 1.5; padding: 6px 0;
+    }
+    .diag-features li svg { width: 16px; height: 16px; color: #22c55e; flex-shrink: 0; margin-top: 3px; }
+    .diag-cta {
+      display: block; padding: 12px 16px; font-size: 14px; font-weight: 500;
+      text-align: center; border-radius: 6px; text-decoration: none;
+      transition: all 120ms; cursor: pointer;
+    }
+    .diag-card:not(.featured) .diag-cta {
+      background: #fff; color: #111113; border: 1px solid rgba(0,0,0,0.1);
+    }
+    .diag-card:not(.featured) .diag-cta:hover { background: #f4f4f5; }
+    .diag-card.featured .diag-cta {
+      background: #f97316; color: #fff; border: 1px solid #f97316;
+    }
+    .diag-card.featured .diag-cta:hover { background: #ea580c; }
+
+    /* ========== CUSTOM SOLUTIONS ========== */
+    .custom { padding: 0 0 100px; background: #fff; }
+    .custom-card {
+      background: #f9fafb; border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px; padding: 48px;
+      display: flex; align-items: center; justify-content: space-between; gap: 40px;
+    }
+    .custom-title {
+      font-family: 'Satoshi', sans-serif; font-size: 24px; font-weight: 500;
+      color: #111113; margin-bottom: 12px;
+    }
+    .custom-desc { font-size: 15px; color: #71717a; line-height: 1.6; max-width: 480px; }
+    .custom-action { text-align: right; flex-shrink: 0; }
+    .custom-price {
+      font-family: 'Satoshi', sans-serif; font-size: 28px; font-weight: 500;
+      color: #111113; margin-bottom: 16px;
+    }
+
+    /* ========== HOW IT WORKS ========== */
+    .how { padding: 100px 0; background: #f9fafb; }
+    .how-header { text-align: center; margin-bottom: 56px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .step { text-align: center; }
+    .step-number {
+      font-family: 'Satoshi', sans-serif; font-size: 48px; font-weight: 700;
+      color: rgba(0,0,0,0.06); margin-bottom: 16px;
+    }
+    .step-title {
+      font-family: 'Satoshi', sans-serif; font-size: 18px; font-weight: 500;
+      color: #111113; margin-bottom: 10px;
+    }
+    .step-desc { font-size: 14px; color: #71717a; line-height: 1.6; }
+
+    /* ========== WHY ME ========== */
+    .why { padding: 100px 0; background: #fff; }
+    .why-header { text-align: center; margin-bottom: 56px; }
+    .why-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .why-card { padding: 32px; background: #f9fafb; border-radius: 12px; }
+    .why-icon { font-size: 24px; margin-bottom: 16px; }
+    .why-title {
+      font-family: 'Satoshi', sans-serif; font-size: 18px; font-weight: 500;
+      color: #111113; margin-bottom: 10px;
+    }
+    .why-desc { font-size: 14px; color: #71717a; line-height: 1.6; }
+
+    /* ========== PORTFOLIO ========== */
+    .portfolio { padding: 100px 0; background: #f9fafb; }
+    .portfolio-header { text-align: center; margin-bottom: 56px; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .port-card {
+      background: #fff; border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px; overflow: hidden; transition: all 0.2s ease;
+    }
+    .port-card:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .port-visual {
+      height: 180px; background: #f4f4f5;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+    }
+    .port-visual.honeybou { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+    .port-visual.storyboard { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+    .port-visual.alfred { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); }
+    .port-body { padding: 24px; }
+    .port-tag {
+      display: inline-block; font-size: 11px; font-weight: 500;
+      color: #71717a; padding: 3px 8px; background: #f4f4f5;
+      border-radius: 4px; margin-bottom: 12px;
+    }
+    .port-title {
+      font-family: 'Satoshi', sans-serif; font-size: 18px; font-weight: 500;
+      color: #111113; margin-bottom: 8px;
+    }
+    .port-desc { font-size: 13px; color: #71717a; line-height: 1.5; margin-bottom: 16px; }
+    .port-results { list-style: none; }
+    .port-results li {
+      font-size: 13px; color: #52525b; padding: 4px 0;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .port-results li::before { content: ''; display: inline-block; width: 4px; height: 4px; background: #22c55e; border-radius: 50%; }
+
+    /* ========== CTA SECTION ========== */
+    .cta-section { padding: 60px 0 100px; }
+    .cta-box {
+      background: #111113; border-radius: 16px; padding: 64px;
+      display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+    }
+    .cta-content h2 {
+      font-family: 'Satoshi', sans-serif; font-size: 28px; font-weight: 500;
+      color: #fff; margin-bottom: 12px;
+    }
+    .cta-content p { font-size: 15px; color: #a1a1aa; line-height: 1.6; max-width: 400px; }
+    .btn-accent {
+      padding: 12px 24px; font-size: 14px; font-weight: 500;
+      background: #f97316; color: #fff; border: none; border-radius: 6px;
+      cursor: pointer; transition: all 120ms; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+    }
+    .btn-accent:hover { background: #ea580c; transform: translateY(-1px); }
+
+    /* ========== CONTACT ========== */
+    .contact { padding: 100px 0; background: #fff; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .contact-content { max-width: 440px; }
+    .contact-title {
+      font-family: 'Satoshi', sans-serif; font-size: 36px; font-weight: 500;
+      color: #111113; margin-bottom: 16px;
+    }
+    .contact-desc { font-size: 16px; color: #71717a; line-height: 1.6; margin-bottom: 32px; }
+    .contact-methods { list-style: none; }
+    .contact-methods li {
+      display: flex; align-items: center; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .contact-methods li:last-child { border-bottom: none; }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: #fff; border: 1px solid rgba(0,0,0,0.06);
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .contact-info h4 { font-size: 14px; font-weight: 500; color: #111113; margin-bottom: 2px; }
+    .contact-info p { font-size: 13px; color: #71717a; }
+    .contact-info a { color: #f97316; text-decoration: none; }
+    .contact-info a:hover { text-decoration: underline; }
+
+    /* Contact Form */
+    .contact-form-card {
+      background: #f9fafb; border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 16px; padding: 32px;
+    }
+    .contact-form-card h3 {
+      font-family: 'Satoshi', sans-serif; font-size: 20px; font-weight: 500;
+      color: #111113; margin-bottom: 4px;
+    }
+    .contact-form-card .form-subtitle {
+      font-size: 14px; color: #71717a; margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-size: 13px; font-weight: 500;
+      color: #111113; margin-bottom: 6px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid rgba(0,0,0,0.1); border-radius: 8px;
+      font-size: 14px; font-family: 'Inter', sans-serif;
+      background: #fff; outline: none; transition: border-color 120ms;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: #f97316;
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-form {
+      width: 100%; padding: 12px; font-size: 14px; font-weight: 500;
+      background: #111113; color: #fff; border: none; border-radius: 8px;
+      cursor: pointer; transition: all 120ms; margin-top: 8px;
+    }
+    .btn-form:hover { background: #0a0a0b; }
+
+    /* ========== FOOTER ========== */
+    .footer { padding: 48px 0; background: #111113; color: #fff; }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-logo {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 600; font-size: 14px;
+    }
+    .footer-name { font-size: 15px; font-weight: 500; }
+    .footer-copy { font-size: 13px; color: #71717a; }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: #a1a1aa; text-decoration: none; transition: color 120ms; }
+    .footer-links a:hover { color: #fff; }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+
+    .hero-content { animation: fadeInUp 0.8s ease-out both; }
+    .hero-mockup { animation: slideInRight 0.8s ease-out 0.2s both; }
+    .headline { animation: fadeInUp 0.6s ease-out both; }
+    .subheadline { animation: fadeInUp 0.6s ease-out 0.1s both; }
+    .cta-group { animation: fadeInUp 0.6s ease-out 0.2s both; }
+    .social-proof { animation: fadeInUp 0.6s ease-out 0.3s both; }
+    .chat-window { animation: float 6s ease-in-out infinite; }
+    .accent-glow { animation: pulse 4s ease-in-out infinite; }
+
+    /* Scroll Animation */
+    .animate-on-scroll { opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* Card hovers */
+    .diag-card, .solution-card, .port-card { transition: all 0.25s ease; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 960px) {
+      .container { padding: 0 24px; }
+      .header-inner { padding: 0 24px; }
+      .header-nav { display: none; }
+      .hero .container { grid-template-columns: 1fr; }
+      .headline { font-size: 34px; }
+      .hero-mockup { display: none; }
+      .solutions-grid { grid-template-columns: repeat(2, 1fr); }
+      .diagnostic-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .custom-card { flex-direction: column; text-align: center; padding: 32px 24px; }
+      .custom-action { text-align: center; }
+      .custom-desc { max-width: 100%; }
+      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+      .why-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .cta-box { grid-template-columns: 1fr; text-align: center; padding: 48px 32px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .section-title { font-size: 28px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .solutions-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="header-brand">
+        <div class="header-logo">GP</div>
+        <span class="header-name">Guillaume Perron</span>
+      </a>
+      <nav class="header-nav">
+        <a href="#solutions">Solutions</a>
+        <a href="#diagnostic">Diagnostic</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#contact" class="btn-signup">Scanner mon business</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="headline">L'AI a l'air compliqué.<br>Avec le bon guide, c'est simple.</h1>
+        <p class="subheadline">
+          Consultant IA pour entrepreneurs et PME au Québec. Je comprends votre business d'abord, je construis la solution ensuite. Pas de jargon, pas de projets interminables — des résultats.
+        </p>
+        <div class="cta-group">
+          <a href="#contact" class="btn-primary">
+            Découvrir ce que l'AI peut faire pour moi
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#diagnostic" class="btn-ghost">Voir les diagnostics</a>
+        </div>
+        <div class="social-proof">
+          <p class="social-proof-label">25 ans à livrer des solutions concrètes pour</p>
+          <div class="clients">
+            <span class="client">Belairdirect</span>
+            <span class="client">Intact Insurance</span>
+            <span class="client">BNA</span>
+            <span class="client">Casino de Montréal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-mockup">
+        <div class="chat-window">
+          <div class="chat-header">
+            <div class="chat-dots">
+              <div class="chat-dot red"></div>
+              <div class="chat-dot yellow"></div>
+              <div class="chat-dot green"></div>
+            </div>
+            <div class="chat-title">
+              <div class="chat-icon">AI</div>
+              <span class="chat-name">Assistant</span>
+            </div>
+            <span class="chat-status">En ligne</span>
+          </div>
+          <div class="chat-body">
+            <div class="msg user">
+              <div class="msg-avatar">GP</div>
+              <div class="msg-bubble">Combien de ventes cette semaine?</div>
+            </div>
+            <div class="msg ai">
+              <div class="msg-avatar">AI</div>
+              <div class="msg-bubble">
+                Cette semaine : <strong>23 ventes</strong> pour un total de <strong>2 847$</strong>
+                <div class="msg-meta">+18% vs semaine dernière</div>
+              </div>
+            </div>
+            <div class="msg user">
+              <div class="msg-avatar">GP</div>
+              <div class="msg-bubble">Génère une description produit</div>
+            </div>
+            <div class="msg ai">
+              <div class="msg-avatar">AI</div>
+              <div class="msg-bubble">
+                <em>"Robe trapèze des années 60, coupe iconique..."</em>
+              </div>
+            </div>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Demandez n'importe quoi..." readonly>
+            <button class="chat-send">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="accent-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LE PROBLÈME ========== -->
+  <section class="problem">
+    <div class="container">
+      <div class="problem-content">
+        <h2 class="problem-title">Vous savez que l'AI peut aider votre business.<br>Vous ne savez juste pas par où commencer.</h2>
+        <p class="problem-text">
+          Vous voyez vos compétiteurs parler d'AI. Vous avez testé ChatGPT. Mais entre "l'AI c'est cool" et "l'AI travaille pour mon business", il y a un fossé.
+          <br><br>
+          Les agences chargent 10 000$+ pour des solutions génériques. Les outils grand public ne comprennent pas votre réalité. Et personne ne prend le temps de vous expliquer simplement ce qui est possible pour <strong>votre</strong> cas.
+          <br><br>
+          C'est exactement ce que je fais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOLUTIONS GRID ========== -->
+  <section class="solutions" id="solutions">
+    <div class="container">
+      <div class="solutions-header">
+        <div class="eyebrow">Solutions AI</div>
+        <h2 class="section-title">Trouvez-vous dans la liste.<br>Je construis la solution.</h2>
+        <p class="section-subtitle">Chaque carte = un problème concret que l'AI peut résoudre pour vous.</p>
+      </div>
+      <div class="solutions-grid">
+
+        <div class="solution-card">
+          <div class="solution-icon">💬</div>
+          <h3 class="solution-problem">"Je réponds aux mêmes questions 20x/semaine"</h3>
+          <p class="solution-answer">Un assistant AI qui connaît votre business et répond à vos clients 24/7, dans votre ton.</p>
+          <p class="solution-price">3 000 - 6 000$</p>
+          <p class="solution-proof">Preuve : Honeybou — 200+ produits, support automatisé</p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">📊</div>
+          <h3 class="solution-problem">"Je vois pas clair dans mes chiffres"</h3>
+          <p class="solution-answer">Un dashboard qui centralise vos données et vous envoie un rapport chaque matin.</p>
+          <p class="solution-price">5 000 - 12 000$</p>
+          <p class="solution-proof">Preuve : Alfred — briefing quotidien automatique</p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">⚡</div>
+          <h3 class="solution-problem">"Je fais les mêmes tâches chaque jour"</h3>
+          <p class="solution-answer">Des workflows qui tournent tout seuls pendant que vous vous concentrez sur l'essentiel.</p>
+          <p class="solution-price">3 000 - 8 000$</p>
+          <p class="solution-proof">Preuve : Alfred — 20+ automatisations/jour</p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">✨</div>
+          <h3 class="solution-problem">"Je passe des heures à créer du contenu"</h3>
+          <p class="solution-answer">Photo de produit? Description en 10 secondes. Posts sociaux générés dans votre voix.</p>
+          <p class="solution-price">2 000 - 6 000$</p>
+          <p class="solution-proof">Preuve : Honeybou + Stella — contenu on-brand automatisé</p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">🛠</div>
+          <h3 class="solution-problem">"J'ai besoin d'un outil qui existe pas"</h3>
+          <p class="solution-answer">Un outil taillé pour votre réalité, construit en 2-4 semaines. Pas un template générique.</p>
+          <p class="solution-price">5 000 - 15 000$</p>
+          <p class="solution-proof">Preuve : Storyboard Maker — scénario en images</p>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-icon">🎨</div>
+          <h3 class="solution-problem">"Je veux des visuels sans payer un studio"</h3>
+          <p class="solution-answer">Images et vidéos par AI, guidées par 25 ans de direction artistique. Pas juste "un gars avec Midjourney".</p>
+          <p class="solution-price">2 000 - 8 000$</p>
+          <p class="solution-proof">25 ans d'expertise visuelle — Belairdirect, Intact, Casino de Montréal</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DIAGNOSTIC ========== -->
+  <section class="diagnostic" id="diagnostic">
+    <div class="container">
+      <div class="diagnostic-header">
+        <div class="eyebrow">Diagnostic AI</div>
+        <h2 class="section-title">Pas sûr par où commencer?<br>On fait le diagnostic ensemble.</h2>
+        <p class="section-subtitle">Deux options. Un scan rapide par mon AI, ou un diagnostic complet avec moi en personne.</p>
+      </div>
+      <div class="diagnostic-grid">
+
+        <!-- Scan Express -->
+        <div class="diag-card">
+          <div class="diag-name">Scan Express</div>
+          <div class="diag-price"><span class="amount">88$</span></div>
+          <p class="diag-desc">Mon AI analyse votre site web et votre secteur, et vous livre 3 quick wins en 24h. Zéro appel requis.</p>
+          <ul class="diag-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Rapport PDF en 24-48h</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>3 recommandations spécifiques à votre business</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Estimation des coûts et du temps sauvé</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>100% automatisé — AI scan</li>
+          </ul>
+          <a href="#contact" class="diag-cta">Commander mon scan</a>
+        </div>
+
+        <!-- Diagnostic Complet -->
+        <div class="diag-card featured">
+          <span class="diag-badge">Recommandé</span>
+          <div class="diag-name">Diagnostic Complet</div>
+          <div class="diag-price"><span class="amount">888$</span></div>
+          <p class="diag-desc">Scan AI approfondi + entrevue 60 min avec moi + plan d'action détaillé + appel de suivi.</p>
+          <ul class="diag-features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Rapport détaillé (10+ pages)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>7+ recommandations avec ROI estimé</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Plan d'implémentation étape par étape</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Appel suivi 30 min (1 semaine après)</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Garantie : 5h/semaine récupérées ou remboursé</li>
+          </ul>
+          <a href="#contact" class="diag-cta">Réserver mon diagnostic</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SOLUTIONS SUR MESURE ========== -->
+  <section class="custom">
+    <div class="container">
+      <div class="custom-card">
+        <div>
+          <h2 class="custom-title">Solutions AI sur mesure</h2>
+          <p class="custom-desc">Assistants, dashboards, automatisations, outils créatifs — chaque projet est construit spécifiquement pour vos processus. Consultation initiale, développement en 2-4 semaines, formation incluse, 30 jours de support.</p>
+        </div>
+        <div class="custom-action">
+          <div class="custom-price">3 000$ — 15 000$</div>
+          <a href="#contact" class="btn-primary">Discuter de mon projet <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COMMENT ÇA MARCHE ========== -->
+  <section class="how">
+    <div class="container">
+      <div class="how-header">
+        <div class="eyebrow">Le processus</div>
+        <h2 class="section-title">Simple. Rapide. Concret.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Vous remplissez le formulaire</h3>
+          <p class="step-desc">Nom, site web, votre plus gros défi. Mon AI scanne votre business automatiquement.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3 class="step-title">On se parle 15 min</h3>
+          <p class="step-desc">J'arrive déjà préparé avec des insights sur votre business. On identifie les opportunités.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Vous recevez votre roadmap</h3>
+          <p class="step-desc">Recommandations concrètes, coûts estimés, plan d'action clair. Vous décidez de la suite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== POURQUOI MOI ========== -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="why-header">
+        <div class="eyebrow">Pourquoi moi</div>
+        <h2 class="section-title">Pas un techie qui parle code.<br>Un entrepreneur qui parle business.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">🔧</div>
+          <h3 class="why-title">Je vis l'AI au quotidien</h3>
+          <p class="why-desc">Mon propre business roule sur l'AI. Mon assistant Alfred gère mes tâches, emails, finances, briefings. Ce que je vous construis, je l'utilise chaque jour.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🎯</div>
+          <h3 class="why-title">25 ans à transformer des idées en livrables concrets</h3>
+          <p class="why-desc">Belairdirect, Intact, Casino de Montréal. Le médium a changé — du motion design à l'AI — mais le skill est le même : comprendre le besoin, traduire, livrer.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🗣</div>
+          <h3 class="why-title">Je traduis, je ne complique pas</h3>
+          <p class="why-desc">Les agences IA parlent de "RAG" et de "fine-tuning". Moi, je vous parle de résultats : combien de temps vous allez sauver et combien ça va coûter.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🔭</div>
+          <h3 class="why-title">Le spectre complet, pas juste un morceau</h3>
+          <p class="why-desc">Assistants, dashboards, automatisations, contenu visuel, vidéo — l'AI touche à tout et moi aussi. Je regarde votre business au complet et je trouve où ça fait la vraie différence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PORTFOLIO ========== -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header">
+        <div class="eyebrow">Résultats</div>
+        <h2 class="section-title">Des résultats, pas des promesses</h2>
+      </div>
+      <div class="portfolio-grid">
+
+        <div class="port-card">
+          <div class="port-visual honeybou">🐝</div>
+          <div class="port-body">
+            <span class="port-tag">E-commerce + Assistant AI</span>
+            <h3 class="port-title">Honeybou — Boutique Vintage</h3>
+            <p class="port-desc">Dashboard admin complet avec assistant IA. Photo de produit = fiche complète automatique.</p>
+            <ul class="port-results">
+              <li>Catalogage automatisé (photo vers fiche)</li>
+              <li>5 voix de marque personnalisables</li>
+              <li>Coût AI : 2-10$/mois</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="port-card">
+          <div class="port-visual storyboard">🎬</div>
+          <div class="port-body">
+            <span class="port-tag">Outil créatif + Génération images</span>
+            <h3 class="port-title">Storyboard Maker</h3>
+            <p class="port-desc">Transforme un texte en storyboard visuel. L'AI découpe en scènes et génère les images.</p>
+            <ul class="port-results">
+              <li>Découpage automatique du scénario</li>
+              <li>Images cohérentes par scène</li>
+              <li>Pré-production accélérée</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="port-card">
+          <div class="port-visual alfred">🤖</div>
+          <div class="port-body">
+            <span class="port-tag">Productivité + Automatisation</span>
+            <h3 class="port-title">Alfred — COO Virtuel</h3>
+            <p class="port-desc">Un système AI qui gère un business au complet : tâches, emails, finances, briefings, recherche.</p>
+            <ul class="port-results">
+              <li>20+ automatisations/jour</li>
+              <li>Briefings automatiques chaque matin</li>
+              <li>Pipeline de missions autonome</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-content">
+          <h2>Prêt à découvrir ce que l'AI peut faire pour votre business?</h2>
+          <p>Remplissez le formulaire. Mon AI scanne votre business automatiquement. Je vous reviens sous 24h.</p>
+        </div>
+        <a href="#contact" class="btn-accent">
+          Scanner mon business
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-content">
+          <h2 class="contact-title">Discutons de votre projet</h2>
+          <p class="contact-desc">
+            Remplissez le formulaire. Mon AI scanne votre business automatiquement. Je vous reviens sous 24h avec un premier aperçu — gratuitement.
+          </p>
+          <ul class="contact-methods">
+            <li>
+              <div class="contact-icon">📧</div>
+              <div class="contact-info">
+                <h4>Email</h4>
+                <p><a href="mailto:guillaume@guillaumeperron.ai">guillaume@guillaumeperron.ai</a></p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon">💬</div>
+              <div class="contact-info">
+                <h4>Appel découverte 15 min</h4>
+                <p>Gratuit, direct, pas de niaisage</p>
+              </div>
+            </li>
+            <li>
+              <div class="contact-icon">⚡</div>
+              <div class="contact-info">
+                <h4>Réponse rapide</h4>
+                <p>Généralement sous 24h</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Faites scanner votre business</h3>
+          <p class="form-subtitle">Mon AI analyse votre site et votre secteur automatiquement.</p>
+          <form action="#" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+              </div>
+              <div class="form-group">
+                <label for="company">Entreprise</label>
+                <input type="text" id="company" name="company" placeholder="Nom de l'entreprise">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="website">Site web</label>
+              <input type="url" id="website" name="website" placeholder="https://votre-site.com">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="vous@exemple.com" required>
+            </div>
+            <div class="form-group">
+              <label for="challenge">C'est quoi votre plus gros défi au quotidien?</label>
+              <textarea id="challenge" name="challenge" placeholder="Décrivez en quelques mots ce qui vous prend le plus de temps..."></textarea>
+            </div>
+            <button type="submit" class="btn-form">Scanner mon business</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">GP</div>
+          <div>
+            <div class="footer-name">Guillaume Perron</div>
+            <div class="footer-copy">GuiP Inc. · Consultant IA pour entrepreneurs · Québec, Canada</div>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="#solutions">Solutions</a>
+          <a href="#diagnostic">Diagnostic</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll-triggered animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.problem-content, .solutions-header, .solutions-grid, .diagnostic-header, .diagnostic-grid, .custom-card, .how-header, .steps-grid, .why-header, .why-grid, .portfolio-header, .portfolio-grid, .cta-box, .contact-grid').forEach(el => {
+      el.classList.add('animate-on-scroll');
+      observer.observe(el);
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.pageYOffset > 50);
+    }, { passive: true });
+  </script>
+
+</body>
+</html>

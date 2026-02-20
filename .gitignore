@@ -1,0 +1,6 @@
+.DS_Store
+*.zip
+progress.json
+CLAUDE.md
+.env
+node_modules/
